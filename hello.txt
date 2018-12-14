@@ -1,0 +1,44 @@
+package main
+
+import "fmt"
+
+func outerFunction() {
+	outer := "I'm outer!"
+
+
+	innerFunction := func() {
+		inner := "I'm inner!"
+
+
+		reinnerFunction := func() {
+			reinner := "I'm reinner"	
+			fmt.Println(reinner)
+		}
+
+
+		reinnerFunction()
+		fmt.Println(inner)
+	}
+
+
+	innerFunction()
+	fmt.Println(outer)
+}
+
+func main() {
+	outerFunction()
+
+}
+
+
+func main() {
+	addzip := func(name string) string {
+		if !strings.HasSuffix(name, "zip") {
+			return name + ".zip"
+		}
+		return name
+	}
+
+	fmt.Println(addzip("go1.5.1.src"))
+	//fmt.Println(addZip("go1.5.1.windows-amd64"))
+}
